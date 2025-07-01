@@ -46,8 +46,9 @@ $menus = mysqli_query($koneksi, "SELECT * FROM menu");
                     <div class="menu-title"><?= htmlspecialchars($menu['nama_menu']) ?></div>
                     <div class="menu-price">Rp <?= number_format($menu['harga'],0,',','.') ?></div>
                     <div class="menu-desc"><?= htmlspecialchars($menu['deskripsi']) ?></div>
-                    <form action="#" method="POST">
-                        <button type="submit" class="add-btn" disabled>Tambah ke Keranjang</button>
+                    <form action="keranjang_proses.php" method="POST">
+                        <input type="hidden" name="menu_id" value="<?= $menu['id'] ?>">
+                        <button type="submit" class="add-btn">Tambah ke Keranjang</button>
                     </form>
                 </div>
             <?php endwhile; ?>
