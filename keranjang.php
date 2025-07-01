@@ -45,7 +45,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div class="container">
         <h1>Keranjang Belanja</h1>
         <?php if (count($items) > 0): ?>
-        <form action="#" method="POST">
+        <form action="pesanan_proses.php" method="POST">
         <table>
             <tr>
                 <th>Menu</th>
@@ -78,7 +78,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <td colspan="2" class="total">Rp <?= number_format($total,0,',','.') ?></td>
             </tr>
         </table>
-        <button type="button" class="btn" disabled>Pesan Sekarang</button>
+        <button type="submit" class="btn">Pesan Sekarang</button>
         </form>
         <?php else: ?>
             <div class="empty">Keranjang masih kosong.</div>
